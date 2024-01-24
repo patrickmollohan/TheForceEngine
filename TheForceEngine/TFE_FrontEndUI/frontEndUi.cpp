@@ -615,14 +615,12 @@ namespace TFE_FrontEndUI
 			ImGui::Image(s_titleGpuImage.image, ImVec2((f32)titleWidth, (f32)titleHeight));
 			ImGui::End();
 
+			// Version
 			ImGui::PushFont(s_versionFont);
 			char versionText[256];
-			sprintf(versionText, "Version %s", TFE_System::getVersionString());
+			sprintf(versionText, "The Force Engine %s", TFE_System::getVersionString());
 			const f32 stringWidth = s_versionFont->CalcTextSizeA(s_versionFont->FontSize, 1024.0f, 0.0f, versionText).x;
-
-			// Make the version fit within the same area as the title.
-			f32 rightEdge = titleLeft + titleWidth;
-			ImGui::SetNextWindowPos(ImVec2(rightEdge - stringWidth - s_versionFont->FontSize*2.0f, f32(h) - s_versionFont->FontSize*4.0f));
+			ImGui::SetNextWindowPos(ImVec2(w - stringWidth - s_versionFont->FontSize*2.0f, f32(h) - s_versionFont->FontSize*4.0f));
 			ImGui::Begin("##Version", &titleActive, windowInvisFlags);
 			ImGui::Text("%s", versionText);
 			ImGui::End();
