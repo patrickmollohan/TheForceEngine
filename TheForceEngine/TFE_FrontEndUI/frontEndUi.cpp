@@ -203,10 +203,10 @@ namespace TFE_FrontEndUI
 	static UiImage s_titleGpuImage;
 	static UiImage s_gradientImage;
 
-	static UiImage s_buttonNormal[8];
-	static UiImage s_buttonSelected[8];
+	static UiImage s_buttonNormal[7];
+	static UiImage s_buttonSelected[7];
 
-	static MenuItemSelected s_menuItemselected[8];
+	static MenuItemSelected s_menuItemselected[7];
 	static const size_t s_menuItemCount = TFE_ARRAYSIZE(s_menuItemselected);
 
 	static IGame* s_game = nullptr;
@@ -342,16 +342,16 @@ namespace TFE_FrontEndUI
 		buttonsLoaded &= loadGpuImage("UI_Images/TFE_LoadSelected.png", &s_buttonSelected[1]);
 		buttonsLoaded &= loadGpuImage("UI_Images/TFE_ManualNormal.png", &s_buttonNormal[2]);
 		buttonsLoaded &= loadGpuImage("UI_Images/TFE_ManualSelected.png", &s_buttonSelected[2]);
-		buttonsLoaded &= loadGpuImage("UI_Images/TFE_CreditsNormal.png", &s_buttonNormal[3]);
-		buttonsLoaded &= loadGpuImage("UI_Images/TFE_CreditsSelected.png", &s_buttonSelected[3]);
-		buttonsLoaded &= loadGpuImage("UI_Images/TFE_SettingsNormal.png", &s_buttonNormal[4]);
-		buttonsLoaded &= loadGpuImage("UI_Images/TFE_SettingsSelected.png", &s_buttonSelected[4]);
-		buttonsLoaded &= loadGpuImage("UI_Images/TFE_ModsNormal.png", &s_buttonNormal[5]);
-		buttonsLoaded &= loadGpuImage("UI_Images/TFE_ModsSelected.png", &s_buttonSelected[5]);
-		buttonsLoaded &= loadGpuImage("UI_Images/TFE_EditorNormal.png", &s_buttonNormal[6]);
-		buttonsLoaded &= loadGpuImage("UI_Images/TFE_EditorSelected.png", &s_buttonSelected[6]);
-		buttonsLoaded &= loadGpuImage("UI_Images/TFE_ExitNormal.png", &s_buttonNormal[7]);
-		buttonsLoaded &= loadGpuImage("UI_Images/TFE_ExitSelected.png", &s_buttonSelected[7]);
+		//buttonsLoaded &= loadGpuImage("UI_Images/TFE_CreditsNormal.png", &s_buttonNormal[3]);
+		//buttonsLoaded &= loadGpuImage("UI_Images/TFE_CreditsSelected.png", &s_buttonSelected[3]);
+		buttonsLoaded &= loadGpuImage("UI_Images/TFE_SettingsNormal.png", &s_buttonNormal[3]);
+		buttonsLoaded &= loadGpuImage("UI_Images/TFE_SettingsSelected.png", &s_buttonSelected[3]);
+		buttonsLoaded &= loadGpuImage("UI_Images/TFE_ModsNormal.png", &s_buttonNormal[4]);
+		buttonsLoaded &= loadGpuImage("UI_Images/TFE_ModsSelected.png", &s_buttonSelected[4]);
+		buttonsLoaded &= loadGpuImage("UI_Images/TFE_EditorNormal.png", &s_buttonNormal[5]);
+		buttonsLoaded &= loadGpuImage("UI_Images/TFE_EditorSelected.png", &s_buttonSelected[5]);
+		buttonsLoaded &= loadGpuImage("UI_Images/TFE_ExitNormal.png", &s_buttonNormal[6]);
+		buttonsLoaded &= loadGpuImage("UI_Images/TFE_ExitSelected.png", &s_buttonSelected[6]);
 		if (!buttonsLoaded)
 		{
 			TFE_System::logWrite(LOG_ERROR, "SystemUI", "Cannot load title screen button images.");
@@ -361,11 +361,11 @@ namespace TFE_FrontEndUI
 		s_menuItemselected[0] = menuItem_Start;
 		s_menuItemselected[1] = menuItem_Load;
 		s_menuItemselected[2] = menuItem_Manual;
-		s_menuItemselected[3] = menuItem_Credits;
-		s_menuItemselected[4] = menuItem_Settings;
-		s_menuItemselected[5] = menuItem_Mods;
-		s_menuItemselected[6] = menuItem_Editor;
-		s_menuItemselected[7] = menuItem_Exit;
+		//s_menuItemselected[3] = menuItem_Credits;
+		s_menuItemselected[3] = menuItem_Settings;
+		s_menuItemselected[4] = menuItem_Mods;
+		s_menuItemselected[5] = menuItem_Editor;
+		s_menuItemselected[6] = menuItem_Exit;
 	}
 
 	void shutdown()
