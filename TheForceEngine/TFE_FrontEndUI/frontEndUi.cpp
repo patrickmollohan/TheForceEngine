@@ -326,9 +326,9 @@ namespace TFE_FrontEndUI
 		{
 			TFE_System::logWrite(LOG_ERROR, "SystemUI", "Cannot load TFE logo: \"UI_Images/TFE_TitleLogo.png\"");
 		}
-		if (!loadGpuImage("UI_Images/TFE_TitleText.png", &s_titleGpuImage))
+		if (!loadGpuImage("UI_Images/DF_TitleText.png", &s_titleGpuImage))
 		{
-			TFE_System::logWrite(LOG_ERROR, "SystemUI", "Cannot load TFE Title: \"UI_Images/TFE_TitleText.png\"");
+			TFE_System::logWrite(LOG_ERROR, "SystemUI", "Cannot load TFE Title: \"UI_Images/DF_TitleText.png\"");
 		}
 		if (!loadGpuImage("UI_Images/Gradient.png", &s_gradientImage))
 		{
@@ -608,13 +608,7 @@ namespace TFE_FrontEndUI
 
 			// Title
 			bool titleActive = true;
-			const f32 titleLeft = f32((w + logoWidth - titleWidth) / 2);
-			ImGui::SetNextWindowSize(ImVec2(logoWidth + windowPadding, logoHeight + windowPadding));
-			ImGui::SetNextWindowPos(ImVec2(f32((w - logoWidth - titleWidth) / 2), (f32)topOffset));
-			ImGui::Begin("##Logo", &titleActive, windowInvisFlags);
-			ImGui::Image(s_logoGpuImage.image, ImVec2((f32)logoWidth, (f32)logoHeight));
-			ImGui::End();
-
+			const f32 titleLeft = f32((w - titleWidth) / 2);
 			ImGui::SetNextWindowSize(ImVec2(titleWidth + windowPadding, titleWidth + windowPadding));
 			ImGui::SetNextWindowPos(ImVec2(titleLeft, (f32)topOffset + (logoHeight - titleHeight) / 2));
 			ImGui::Begin("##Title", &titleActive, windowInvisFlags);
