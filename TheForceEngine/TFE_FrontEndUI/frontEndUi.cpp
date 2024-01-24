@@ -337,8 +337,6 @@ namespace TFE_FrontEndUI
 		buttonsLoaded &= loadGpuImage("UI_Images/TFE_LoadSelected.svg", &s_buttonSelected[1]);
 		buttonsLoaded &= loadGpuImage("UI_Images/TFE_ManualNormal.svg", &s_buttonNormal[2]);
 		buttonsLoaded &= loadGpuImage("UI_Images/TFE_ManualSelected.svg", &s_buttonSelected[2]);
-		//buttonsLoaded &= loadGpuImage("UI_Images/TFE_CreditsNormal.png", &s_buttonNormal[3]);
-		//buttonsLoaded &= loadGpuImage("UI_Images/TFE_CreditsSelected.png", &s_buttonSelected[3]);
 		buttonsLoaded &= loadGpuImage("UI_Images/TFE_SettingsNormal.svg", &s_buttonNormal[3]);
 		buttonsLoaded &= loadGpuImage("UI_Images/TFE_SettingsSelected.svg", &s_buttonSelected[3]);
 		buttonsLoaded &= loadGpuImage("UI_Images/TFE_ModsNormal.svg", &s_buttonNormal[4]);
@@ -356,7 +354,6 @@ namespace TFE_FrontEndUI
 		s_menuItemselected[0] = menuItem_Start;
 		s_menuItemselected[1] = menuItem_Load;
 		s_menuItemselected[2] = menuItem_Manual;
-		//s_menuItemselected[3] = menuItem_Credits;
 		s_menuItemselected[3] = menuItem_Settings;
 		s_menuItemselected[4] = menuItem_Mods;
 		s_menuItemselected[5] = menuItem_Editor;
