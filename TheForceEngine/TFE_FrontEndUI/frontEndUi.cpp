@@ -199,7 +199,6 @@ namespace TFE_FrontEndUI
 	static bool s_canSave = false;
 	static bool s_drawNoGameDataMsg = false;
 
-	static UiImage s_logoGpuImage;
 	static UiImage s_titleGpuImage;
 	static UiImage s_gradientImage;
 
@@ -322,10 +321,6 @@ namespace TFE_FrontEndUI
 		s_titleFont   = io.Fonts->AddFontFromFileTTF(fontpath, floorf(48*s_uiScale + 0.5f));
 		s_dialogFont  = io.Fonts->AddFontFromFileTTF(fontpath, floorf(20*s_uiScale + 0.5f));
 
-		if (!loadGpuImage("UI_Images/TFE_TitleLogo.png", &s_logoGpuImage))
-		{
-			TFE_System::logWrite(LOG_ERROR, "SystemUI", "Cannot load TFE logo: \"UI_Images/TFE_TitleLogo.png\"");
-		}
 		if (!loadGpuImage("UI_Images/TFE_TitleText.svg", &s_titleGpuImage))
 		{
 			TFE_System::logWrite(LOG_ERROR, "SystemUI", "Cannot load TFE Title: \"UI_Images/TFE_TitleText.svg\"");
@@ -598,8 +593,6 @@ namespace TFE_FrontEndUI
 			const s32 posScale = 1080;	// positions are at 1080p so must be scaled for different resolutions.
 			const s32 titlePosY = 100;
 
-			const s32 logoHeight = s_logoGpuImage.height  * h / logoScale;
-			const s32 logoWidth = s_logoGpuImage.width   * h / logoScale;
 			const s32 titleHeight = s_titleGpuImage.height * h / logoScale;
 			const s32 titleWidth = s_titleGpuImage.width  * h / logoScale;
 			const s32 textHeight = s_buttonNormal[0].height * h / logoScale;
@@ -610,7 +603,7 @@ namespace TFE_FrontEndUI
 			bool titleActive = true;
 			const f32 titleLeft = f32((w - titleWidth) / 2);
 			ImGui::SetNextWindowSize(ImVec2(titleWidth + windowPadding, titleWidth + windowPadding));
-			ImGui::SetNextWindowPos(ImVec2(titleLeft, (f32)topOffset + (logoHeight - titleHeight) / 2));
+			ImGui::SetNextWindowPos(ImVec2(titleLeft, (f32)topOffset));
 			ImGui::Begin("##Title", &titleActive, windowInvisFlags);
 			ImGui::Image(s_titleGpuImage.image, ImVec2((f32)titleWidth, (f32)titleHeight));
 			ImGui::End();
