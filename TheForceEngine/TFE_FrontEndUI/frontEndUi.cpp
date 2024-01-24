@@ -326,9 +326,9 @@ namespace TFE_FrontEndUI
 		{
 			TFE_System::logWrite(LOG_ERROR, "SystemUI", "Cannot load TFE logo: \"UI_Images/TFE_TitleLogo.png\"");
 		}
-		if (!loadGpuImage("UI_Images/DF_TitleText.png", &s_titleGpuImage))
+		if (!loadGpuImage("UI_Images/TFE_TitleText.svg", &s_titleGpuImage))
 		{
-			TFE_System::logWrite(LOG_ERROR, "SystemUI", "Cannot load TFE Title: \"UI_Images/DF_TitleText.png\"");
+			TFE_System::logWrite(LOG_ERROR, "SystemUI", "Cannot load TFE Title: \"UI_Images/TFE_TitleText.svg\"");
 		}
 		if (!loadGpuImage("UI_Images/Gradient.png", &s_gradientImage))
 		{
